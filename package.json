@@ -1,0 +1,32 @@
+{
+  "name": "@pipeworx/mcp-eu-energy-imports",
+  "version": "0.1.0",
+  "description": "EU energy imports MCP -- where Germany and each EU country get their gas, oil and coal, how much of it comes from Russia, how import-dependent the country is, and what its energy mix looks like.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "bin": {
+    "mcp-eu-energy-imports": "bin/cli.js"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "eu-energy-imports"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-eu-energy-imports.git"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-d3ab644c222437d6ff5374d269b1838dd982a4fcfe0c1eaacc774a31f1be823a",
+    "sourceCommit": "5749f83c0ea115fab4c0c0ef04b66b05f2507d67"
+  }
+}
