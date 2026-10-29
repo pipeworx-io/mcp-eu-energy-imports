@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-eu-energy-imports",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "EU energy imports MCP -- where Germany and each EU country get their gas, oil and coal, how much of it comes from Russia, how import-dependent the country is, and what its energy mix looks like.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-eu-energy-imports": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "eu-energy-imports"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-eu-energy-imports.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/eu-energy-imports",
   "pipeworx": {
-    "sourceHash": "v1-9ffa3ad50b2523565f9e4756c5d15e31f9e2ca8021d8eed8027c50266453a4bf",
-    "sourceCommit": "722087a9bda73f85942e8f6bbfd598544cb0d490"
+    "mode": "gateway",
+    "slug": "eu-energy-imports",
+    "gatewaySlug": "eu-energy-imports",
+    "sourceHash": "v1-5630c555f91d55af0d4353fd263b429ce02b48e3e97a9714ad0bb418506f5303",
+    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
   }
 }

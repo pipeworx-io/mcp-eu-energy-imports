@@ -1,0 +1,122 @@
+[
+  {
+    "name": "import_origins",
+    "description": "Which countries a country imports natural gas, crude oil or coal FROM, ranked, with each supplier's share of the total and Russia's share called out. Works for Germany, any EU member, or the EU as a whole (\"EU\"). Annual by default (latest published year); gas and oil also accept a month. Answers \"where does Germany get its gas\", \"how much gas does the EU still import from Russia\", \"who supplies Italy's oil\". Source: Eurostat energy statistics.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fuel": {
+          "type": "string",
+          "enum": [
+            "gas",
+            "oil",
+            "coal"
+          ],
+          "description": "Fuel: gas, oil (crude) or coal (solid fossil fuels)"
+        },
+        "geo": {
+          "type": "string",
+          "description": "Importing country as a 2-letter code (\"DE\", \"FR\", \"IT\", \"EL\" for Greece) or \"EU\" for the EU-27 total. Default \"DE\"."
+        },
+        "period": {
+          "type": "string",
+          "description": "Year \"2024\" or, for gas and oil only, month \"2025-06\". Default: latest published year."
+        },
+        "top_n": {
+          "type": "number",
+          "description": "How many suppliers to list (1-30, default 10)"
+        },
+        "product": {
+          "type": "string",
+          "description": "Optional Eurostat energy-product code to narrow within the fuel (e.g. \"G3200\" for LNG only, \"O4600\" for oil products)."
+        }
+      },
+      "required": [
+        "fuel"
+      ]
+    }
+  },
+  {
+    "name": "russia_import_trend",
+    "description": "Year-by-year Russian share of a country's (or the EU's) imports of natural gas, crude oil or coal: Russian volume, total imports and the percentage, for each year. Shows the collapse after 2022 -- e.g. Germany's Russian gas share by year. Source: Eurostat energy statistics.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fuel": {
+          "type": "string",
+          "enum": [
+            "gas",
+            "oil",
+            "coal"
+          ],
+          "description": "Fuel: gas, oil (crude) or coal"
+        },
+        "geo": {
+          "type": "string",
+          "description": "2-letter country code or \"EU\". Default \"DE\"."
+        },
+        "from_year": {
+          "type": "number",
+          "description": "First year (default: 8 years back)"
+        },
+        "to_year": {
+          "type": "number",
+          "description": "Last year (default: latest published)"
+        }
+      },
+      "required": [
+        "fuel"
+      ]
+    }
+  },
+  {
+    "name": "import_dependency_rate",
+    "description": "Energy import dependency: the percentage of a country's energy needs met by net imports, for all energy or for gas, oil or coal, by year. Above 100% means stocks were built up. Source: Eurostat energy statistics.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "energy": {
+          "type": "string",
+          "enum": [
+            "total",
+            "gas",
+            "oil",
+            "coal"
+          ],
+          "description": "Energy type (default \"total\")"
+        },
+        "geo": {
+          "type": "string",
+          "description": "2-letter country code or \"EU\". Default \"DE\"."
+        },
+        "from_year": {
+          "type": "number",
+          "description": "First year (default: 8 years back)"
+        },
+        "to_year": {
+          "type": "number",
+          "description": "Last year (default: latest published)"
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "energy_mix",
+    "description": "A country's (or the EU's) energy mix: gross available energy split into natural gas, oil, solid fossil fuels, renewables, nuclear, waste, and net electricity and heat, in terajoules and as a percentage share, for one year. Source: Eurostat energy balances.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "geo": {
+          "type": "string",
+          "description": "2-letter country code or \"EU\". Default \"DE\"."
+        },
+        "year": {
+          "type": "number",
+          "description": "Year (default: latest published)"
+        }
+      },
+      "required": []
+    }
+  }
+]
