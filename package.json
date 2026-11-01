@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-eu-energy-imports",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "EU energy imports MCP -- where Germany and each EU country get their gas, oil and coal, how much of it comes from Russia, how import-dependent the country is, and what its energy mix looks like.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "eu-energy-imports",
     "gatewaySlug": "eu-energy-imports",
-    "sourceHash": "v1-5630c555f91d55af0d4353fd263b429ce02b48e3e97a9714ad0bb418506f5303",
-    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
+    "sourceHash": "v1-41473763a12ffc1ccfd0cb2eab57ca7b42bd8cf7bcb78a5d488cc48b88f386a1",
+    "sourceCommit": "d35e32c1ffe988e24d391dedb35666387fd2b3d6"
   }
 }
